@@ -1,17 +1,21 @@
 {
   "name": "linked-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "A singly linked list.",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha",
+    "doc":
+      "jsdoc2md --template .\\jsdoc2md\\README.hbs --files .\\linked-list.js > README.md"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Johnny Reina <johnny.r.reina@gmail.com>",
+  "license": "WTFPL",
   "devDependencies": {
-    "chai": "^4.1.2"
-  }
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1"
+  },
+  "dependencies": {}
 }
