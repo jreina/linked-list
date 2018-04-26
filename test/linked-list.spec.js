@@ -1,8 +1,8 @@
 const { expect } = require('chai');
-const linkedlist = require('../linked-list');
+const LinkedList = require('../linked-list');
 
-describe('linkedlist', function() {
-  const list = new linkedlist();
+describe('LinkedList', function() {
+  const list = new LinkedList();
 
   it('Should add nodes to the list', function() {
     expect(() => list.add(0, 0)).to.not.throw();
@@ -27,5 +27,20 @@ describe('linkedlist', function() {
     expect(() => list.removeFirst()).to.not.throw();
     expect(list.get(0)).to.equal(null);
     expect(list.dump()).to.deep.equal([]);
+  });
+
+  it('Should work with other fun stuff like objects', function() {
+    const expected = [
+      { x: 0, y: 0 },
+      { x: 1, y: 1 },
+      { x: 2, y: 4 },
+      { x: 3, y: 9 }
+    ];
+    expected.forEach((val, index) => {
+      expect(() => list.add(index, val)).to.not.throw();
+    });
+
+    const actual = list.dump();
+    expect(actual).to.deep.equal(expected);
   });
 });
